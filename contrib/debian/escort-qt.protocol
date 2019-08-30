@@ -1,0 +1,11 @@
+[Protocol]
+exec=escortcoin-qt '%u'
+protocol=escortcoin
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

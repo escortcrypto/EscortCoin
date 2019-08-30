@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=EscortCoin
+Comment=EscortCoin P2P Cryptocurrency
+Exec=escortcoin-qt %u
+Terminal=false
+Type=Application
+Icon=escortcoin128
+MimeType=x-scheme-handler/escortcoin;
+Categories=Office;Finance;
+Name[en_US]=escortcoin-qt.desktop

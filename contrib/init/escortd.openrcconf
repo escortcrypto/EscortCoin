@@ -1,0 +1,26 @@
+# /etc/conf.d/escortcoind: config file for /etc/init.d/escortcoind
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/escortcoin/escortcoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/escortcoind"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/escortcoind.pid"
+
+# Where to write escortcoind data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/escortcoind"
+
+# User and group to own escortcoind process
+#BITCOIND_USER="escortcoin"
+#BITCOIND_GROUP="escortcoin"
+
+# Path to escortcoind executable
+#BITCOIND_BIN="/usr/bin/escortcoind"
+
+# Nice value to run escortcoind under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

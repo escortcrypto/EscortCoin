@@ -1,0 +1,26 @@
+[Unit]
+Description=EscortCoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=escortcoin
+Group=escortcoin
+
+Type=forking
+PIDFile=/var/lib/escortcoind/escortcoind.pid
+
+ExecStart=/usr/bin/escortcoind -daemon -pid=/var/lib/escortcoind/escortcoind.pid \
+          -conf=/etc/escortcoin/escortcoin.conf -datadir=/var/lib/escortcoind
+
+ExecStop=-/usr/bin/escortcoin-cli -conf=/etc/escortcoin/escortcoin.conf \
+         -datadir=/var/lib/escortcoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
