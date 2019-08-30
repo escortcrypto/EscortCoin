@@ -42,12 +42,12 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x000002563024b106ca6630ff598e3016fc218f6c5f21366623bce0e75bfc2064"));
+    (0, uint256("0x00000708757cbf79719b66efbb36aa44fcd9132888e7109af2a5f9f667c50a15"));
 	
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1563817096, // * UNIX timestamp of last checkpoint block
+    1567176152, // * UNIX timestamp of last checkpoint block
     0,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
@@ -77,10 +77,10 @@ public:
     {
         networkID = CBaseChainParams::MAIN;
         strNetworkID = "main";
-        pchMessageStart[0] = 0x32;
-        pchMessageStart[1] = 0xcb;
-        pchMessageStart[2] = 0x12;
-        pchMessageStart[3] = 0xac;
+        pchMessageStart[0] = 0x22;
+        pchMessageStart[1] = 0xca;
+        pchMessageStart[2] = 0x14;
+        pchMessageStart[3] = 0xbc;
         vAlertPubKey = ParseHex("045ad6f1551c2367f81c0ecb4d45d088298442887645a314dfcba3039401872473b0200e69d9679a0d7cc307fb9aaaacafb0cebc18050ce7c995fa19c6accc8415");
         nDefaultPort = 9696;
         bnProofOfWorkLimit = ~uint256(0) >> 1;
@@ -98,7 +98,7 @@ public:
         nLastPOWBlock = 200;
         nModifierUpdateBlock = 1; // we use the version 2 for EAPC
 
-        const char* pszTimestamp = "EscortCoin is born! - zabtc 22/07/2019";
+        const char* pszTimestamp = "EscortCoin is live - zabtc 30/08/2019";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -109,16 +109,16 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1563817096;
+        genesis.nTime = 1567176152;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 21770810;
+        genesis.nNonce = 21720758;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000002563024b106ca6630ff598e3016fc218f6c5f21366623bce0e75bfc2064"));
-        assert(genesis.hashMerkleRoot == uint256("0xb693cbb2fed7b4fbab60499202c45bf8dce6d839c2938ad0132c29dd16daa014"));
+        assert(hashGenesisBlock == uint256("0x00000708757cbf79719b66efbb36aa44fcd9132888e7109af2a5f9f667c50a15"));
+        assert(genesis.hashMerkleRoot == uint256("0x8a0d267a72be628cba782e044937f93c12c0bb78e3bbac1e8153c63d91af81a2"));
 
-        // EscortCoin addresses start with 'G'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 38);
+        // EscortCoin addresses start with 'E'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 33);
         // EscortCoin script addresses start with '3'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 6);
         // EscortCoin private keys start with 'K'
