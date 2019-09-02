@@ -1,8 +1,8 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017 The EscortCoin developers
+// Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2019 The EscortCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -94,7 +94,7 @@ public:
         nTargetSpacing = 1 * 60;  // EscortCoin: 2 minute blocks during POW (block 1-200)
         nMaturity = 5; // 6 block maturity (+1 elsewhere)
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 90000000 * COIN; // 5 million max supply
+        nMaxMoneyOut = 15000000 * COIN; // 15 million max supply
         nLastPOWBlock = 200;
         nModifierUpdateBlock = 1; // we use the version 2 for EAPC
 
@@ -144,7 +144,7 @@ public:
 
         nPoolMaxTransactions = 3;
         strSporkKey = "04cc17389379a0e323f53ea504d38cd71f43dc22f597805fed33a51b05ced1a3ae0db84089985f351b3737721736a82f58c8bd529f79c8ffe57e922bda792146ab";
-        strMasternodePoolDummyAddress = "GSJVWUkt6HtSCY2SaJ2akeyJUg8bg1hW3S";
+        strMasternodePoolDummyAddress = "ESJVWUkt6HtSCY2SaJ2akeyJUg8bg1hW3S";
         nStartMasternodePayments = 4070908800; 
 
         nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
