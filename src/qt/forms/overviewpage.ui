@@ -700,7 +700,7 @@
                           </font>
                          </property>
                          <property name="text">
-                          <string notr="true">&lt;a href=&quot;https://discord.gg/ndQVgtv/&quot;&gt;https://discord.gg/ndQVgtv/&lt;/a&gt;</string>
+                          <string notr="true">&lt;a href=&quot;https://discordapp.com/invite/mWZvH3c/&quot;&gt;https://discordapp.com/invite/mWZvH3c/&lt;/a&gt;</string>
                          </property>
                          <property name="alignment">
                           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -726,7 +726,7 @@
                           </font>
                          </property>
                          <property name="text">
-                          <string notr="true">&lt;a href=&quot;https://github.com/eapccrypto/EscortCoin/&quot;&gt;https://github.com/eapccrypto/EscortCoin/&lt;/a&gt;</string>
+                          <string notr="true">&lt;a href=&quot;https://github.com/escortcrypto/EscortCoin/&quot;&gt;https://github.com/escortcrypto/EscortCoin/&lt;/a&gt;</string>
                          </property>
                          <property name="alignment">
                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -752,7 +752,7 @@
                           </font>
                          </property>
                          <property name="text">
-                          <string notr="true">&lt;a href=&quot;http://165.227.201.59:3001/&quot;&gt;http://165.227.201.59:3001/&lt;/a&gt;</string>
+                          <string notr="true">&lt;a href=&quot;https://explorer.escortcoin.org/&quot;&gt;https://explorer.escortcoin.org/&lt;/a&gt;</string>
                          </property>
                          <property name="alignment">
                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -817,7 +817,7 @@
                           </font>
                          </property>
                          <property name="text">
-                          <string notr="true">&lt;a href=&quot;wallet@escortcoin.com&quot;&gt;wallet@escortcoin.com&lt;/a&gt;</string>
+                          <string notr="true">&lt;a href=&quot;info@escortcoin.org&quot;&gt;info@escortcoin.org&lt;/a&gt;</string>
                          </property>
                          <property name="alignment">
                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
