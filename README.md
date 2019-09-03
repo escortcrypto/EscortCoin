@@ -2,6 +2,8 @@
 
 EscortCoin Core is a decentralized, peer-to-peer cryptocurrency with a primary focus on energy-efficiency and scalabilty.
 
+### Website: www.escortcoin.org
+
 ## Coin Specs
 
 #
