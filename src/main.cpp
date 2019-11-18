@@ -1667,6 +1667,12 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     return ret;
 }
 
+bool IsMasternodeCollateral(CAmount value)
+{
+
+    return value == 5000;
+}
+
 bool IsInitialBlockDownload()
 {
     LOCK(cs_main);

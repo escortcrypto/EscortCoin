@@ -1,3 +1,4 @@
+
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
@@ -383,6 +384,8 @@ public:
     void ReacceptWalletTransactions();
     void ResendWalletTransactions();
     CAmount GetBalance() const;
+    CAmount GetLockedWatchOnlyBalance() const;
+    CAmount GetLockedCoins() const;
     CAmount GetUnconfirmedBalance() const;
     CAmount GetImmatureBalance() const;
     CAmount GetWatchOnlyBalance() const;
@@ -966,6 +969,75 @@ public:
         return nCredit;
     }
 
+    CAmount GetLockedCredit() const
+    {
+        if (pwallet == 0)
+            return 0;
+    
+        // Must wait until coinbase is safely deep enough in the chain before valuing it
+        if (IsCoinBase() && GetBlocksToMaturity() > 0)
+            return 0;
+    
+        CAmount nCredit = 0;
+        uint256 hashTx = GetHash();
+        for (unsigned int i = 0; i < vout.size(); i++) {
+            const CTxOut& txout = vout[i];
+    
+            // Skip spent coins
+            if (pwallet->IsSpent(hashTx, i)) continue;
+    
+            // Add locked coins
+            if (pwallet->IsLockedCoin(hashTx, i)) {
+                nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
+            }
+    
+            // Add masternode collaterals which are handled likc locked coins
+            if (fMasterNode && IsMasternodeCollateral(vout[i].nValue)) {
+                nCredit += pwallet->GetCredit(txout, ISMINE_SPENDABLE);
+            }
+    
+            if (!MoneyRange(nCredit))
+                throw std::runtime_error("CWalletTx::GetLockedCredit() : value out of range");
+        }
+    
+        return nCredit;
+    }
+
+CAmount GetLockedWatchOnlyCredit() const
+    {
+        if (pwallet == 0)
+            return 0;
+    
+        // Must wait until coinbase is safely deep enough in the chain before valuing it
+        if (IsCoinBase() && GetBlocksToMaturity() > 0)
+            return 0;
+    
+        CAmount nCredit = 0;
+        uint256 hashTx = GetHash();
+        for (unsigned int i = 0; i < vout.size(); i++) {
+            const CTxOut& txout = vout[i];
+    
+            // Skip spent coins
+            if (pwallet->IsSpent(hashTx, i)) continue;
+    
+            // Add locked coins
+            if (pwallet->IsLockedCoin(hashTx, i)) {
+                nCredit += pwallet->GetCredit(txout, ISMINE_WATCH_ONLY);
+            }
+    
+            // Add masternode collaterals which are handled likc locked coins
+            if (fMasterNode && IsMasternodeCollateral(vout[i].nValue)) {
+                nCredit += pwallet->GetCredit(txout, ISMINE_WATCH_ONLY);
+            }
+    
+            if (!MoneyRange(nCredit))
+                throw std::runtime_error("CWalletTx::GetLockedCredit() : value out of range");
+        }
+    
+        return nCredit;
+    }
+
+
     CAmount GetChange() const
     {
         if (fChangeCached)
@@ -1196,3 +1268,6 @@ private:
 };
 
 #endif // BITCOIN_WALLET_H
+
+
+

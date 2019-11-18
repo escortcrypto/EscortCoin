@@ -206,6 +206,9 @@ void UnloadBlockIndex();
 int ActiveProtocol();
 /** Process protocol messages received from a given node */
 bool ProcessMessages(CNode* pfrom);
+
+bool IsMasternodeCollateral(CAmount value);
+
 /**
  * Send queued protocol messages to be sent to a give node.
  *

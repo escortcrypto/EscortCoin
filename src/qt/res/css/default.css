@@ -905,6 +905,8 @@ QWidget .QFrame#frameBalances .QLabel#labelSpendable { /* Spendable Header */
 	margin-left:16px;
 }
 
+
+QWidget .QFrame#frameBalances .QLabel#labelLockedBalanceText,
 QWidget .QFrame#frameBalances .QLabel#labelImmatureText, /* Immature Balance Label */
 QWidget .QFrame#frameBalances .QLabel#labelTotalText, /* Total Balance Label */
 QWidget .QFrame#frameBalances .QLabel#labelPendingText, /* Pending Balance Label */
@@ -927,6 +929,7 @@ QWidget .QFrame#frameBalances #lineBalances { /* EAPC Balances Line separator */
 }
 
 
+QWidget .QFrame#frameBalances .QLabel#labelLockedBalance,
 QWidget .QFrame#frameBalances .QLabel#labelTotal, /* Total Balance */
 QWidget .QFrame#frameBalances .QLabel#labelBalance { /* Available Balance */
 	qproperty-alignment: 'AlignVCenter | AlignLeft';
