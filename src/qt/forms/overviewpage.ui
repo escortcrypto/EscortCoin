@@ -826,7 +826,7 @@
                           </font>
                          </property>
                          <property name="text">
-                          <string>Coming soon</string>
+                          <string notr="true">&lt;a href=&quot;https://graviex.net/markets/eapcbtc/&quot;&gt;https://graviex.net/markets/eapcbtc/&lt;/a&gt;</string>
                          </property>
                          <property name="alignment">
                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
